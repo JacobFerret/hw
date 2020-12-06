@@ -29,8 +29,9 @@ for x in range(3):
             
             if exam in lesson:
                 grades={"midterm":100, "final":70, "project":100}
+                print("You got {} from the midterm, {} from the final, and {} from the project".format(grades["midterm"],grades["final"],grades["project"]))
                 result=grades["midterm"]*0.3+grades["final"]*0.5+grades["project"]*0.2
-                print("Your result from the {} exam is: {}".format(exam,result))
+                print("Your grade from {}  is: {}".format(exam,result))
                 
                 if result>90:
                     print("You got AA")
