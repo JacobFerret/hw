@@ -1,0 +1,54 @@
+student="Ferit Ayrancı"
+lesson=[]
+
+def lesson_no(number):
+    
+    if number<6 and number>2:
+        for i in range(number):
+            taken_lessons=input("Please enter a lesson you want to take:")
+            lesson.append(taken_lessons)
+        return "Your lessons:", lesson
+    
+    elif number<3:
+        return "You failed in class!"
+    
+    else:
+        return "You can't take more than 5 lessons"
+
+for x in range(3):
+    entry=input("Please enter your name:")
+    if entry == student:
+        
+        print("Welcome")
+        number=int(input("How many lessons you want to take?"))
+        no=lesson_no(number)
+        print(no)
+        
+        if number==3 or 4 or 5:
+            exam=input("Choose a lesson to take an exam:")
+            
+            if exam in lesson:
+                grades={"midterm":100, "final":70, "project":100}
+                result=grades["midterm"]*0.3+grades["final"]*0.5+grades["project"]*0.2
+                print("Your result from the {} exam is: {}".format(exam,result))
+                
+                if result>90:
+                    print("You got AA")
+                elif result>70:
+                    print("You got BB")
+                elif result>50:
+                    print("You got CC")
+                elif result>30:
+                    print("You got DD")
+                else:
+                    print("You got an FF and you failed the class")
+                break
+                
+            else:
+                print("This lesson does not exist, try again")
+                
+    elif x<=1:
+        print("Please try again:")
+        
+    else:
+        print("Please try again later")
