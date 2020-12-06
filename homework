@@ -24,7 +24,7 @@ for x in range(3):
         no=lesson_no(number)
         print(no)
         
-        if number==3 or 4 or 5:
+        if number==3 or number==4 or number==5:
             exam=input("Choose a lesson to take an exam:")
             
             if exam in lesson:
